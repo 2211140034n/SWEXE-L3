@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby "3.2.2"
 
 
-gem "rails","~>7.08"
+gem "rails","~>7.1.3.4"
 gem 'activerecord'
 gem 'rails-i18n'
 
