@@ -22,4 +22,11 @@ test:
 
 production:
   <<: *default
-  database: storage/production.sqlite3
+  adapter: postgresql
+  encodeing: unicode
+  pool: 5
+  database: asd_3kor
+  username: asd_3kor_user
+  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  #database: storage/production.sqlite3
