@@ -1,0 +1,11 @@
+<h1>ツイート詳細</h1>
+<p><%= @tweet.message %></p>
+<p>投稿時間: <%= time_ago_in_words(@tweet.tdate) %>前</p>
+<% if @tweet.image.attached? %>
+  <div>
+    <%= image_tag @tweet.image %>
+  </div>
+<% end %>
+<%= link_to '編集', edit_tweet_path(@tweet) %>
+<%= link_to '削除', "/tweets/#{@tweet.id}", data: {turbo_method: :delete} %>
+<%= link_to '一覧に戻る', tweets_path %>

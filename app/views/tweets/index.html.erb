@@ -1,0 +1,18 @@
+<h1>ツイート一覧</h1>
+<%= link_to '新しいツイート', new_tweet_path %>
+<ul>
+  <% @tweets.each do |tweet| %>
+    <li>
+      <%= tweet.message %> - <%= distance_of_time_in_words(tweet.tdate, Time.current, include_seconds: true) %> 前
+      
+      <% if tweet.image.attached? %>
+        <%= image_tag tweet.image %>
+        <p><%= tweet.image.filename %></p> <!-- 画像のファイル名を表示 -->
+      <% end %>
+      
+      <%= link_to '詳細', tweet_path(tweet) %>
+      <%= link_to '編集', edit_tweet_path(tweet) %>
+      <%= link_to '削除', "/tweets/#{tweet.id}", data: {turbo_method: :delete} %>
+    </li>
+  <% end %>
+</ul>
