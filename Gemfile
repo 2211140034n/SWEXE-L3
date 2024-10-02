@@ -1,6 +1,9 @@
 source "https://rubygems.org"
 
 ruby "3.2.2"
+
+
+gem "rails","~>7.08"
 gem 'activerecord'
 gem 'rails-i18n'
 
